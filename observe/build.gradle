@@ -13,7 +13,7 @@ ext {
     siteUrl = 'https://github.com/mutoukenji/android-observe'
     gitUrl = 'https://github.com/mutoukenji/android-observe.git'
 
-    libraryVersion = '1.1.2'
+    libraryVersion = '1.0.0'
 
     developerId = 'mutoukenji'
     developerName = 'MutouKenji'
