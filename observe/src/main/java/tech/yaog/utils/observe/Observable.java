@@ -23,7 +23,7 @@ public abstract class Observable <T> {
                 changed = true;
             }
             else {
-                changed = data.equals(this.data);
+                changed = !data.equals(this.data);
             }
         }
         else {
