@@ -58,7 +58,7 @@ afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
-                from components.findByName('release')
+                from components.findByName('bundleReleaseAar')
                 groupId = 'com.github.mutoukenji'
                 artifactId = 'android-observe'
                 version = '1.0.3'
