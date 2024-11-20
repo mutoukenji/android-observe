@@ -4,12 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Observable <T> {
+    private boolean initialized = false;
+
     protected T data;
 
     protected List<Observer<T>> observers = new ArrayList<>();
 
+    public Observable() {
+    }
+
+    public Observable(T data) {
+        if (data != null) {
+            update(data);
+        }
+    }
+
     public void registerObserver(Observer<T> observer) {
         observers.add(observer);
+        if (initialized) {
+            observer.onDataChanged(data);
+        }
     }
 
     public void unregisterObserver(Observer<T> observer) {
@@ -17,6 +31,7 @@ public abstract class Observable <T> {
     }
 
     public void update(T data) {
+        initialized = true;
         boolean changed = false;
         if (data != null) {
             if (this.data == null) {
