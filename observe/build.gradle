@@ -53,3 +53,16 @@ tasks.withType(JavaCompile).configureEach {
 tasks.withType(Javadoc).configureEach {
     options.encoding = 'UTF-8'
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.findByName('release')
+                groupId = 'com.github.mutoukenji'
+                artifactId = 'android-observe'
+                version = '1.0.3'
+            }
+        }
+    }
+}
